@@ -6,10 +6,11 @@ func isValidSudoku(board [][]byte) bool {
 	columnMap := make([]map[byte]bool, 9)
 	initializeMaps(columnMap)
 	boardMap := make([][]map[byte]bool, 3)
-	for rIndex, grid := range board {
-		for cIndex := range grid {
-			boardMap[rIndex][cIndex] = make(map[byte]bool)
+	for rIndex := range boardMap {
+		for i := 0; i < 3; i++ {
+			boardMap[rIndex] = make([]map[byte]bool, 3)
 		}
+		initializeMaps(boardMap[rIndex])
 	}
 	for row, rowVal := range board {
 		for col, colVal := range rowVal {
