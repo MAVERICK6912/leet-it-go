@@ -10,12 +10,6 @@ func trap(input []int) int {
 		}
 		return b
 	}
-	// min := func(a, b int) int {
-	// 	if a < b {
-	// 		return a
-	// 	}
-	// 	return b
-	// }
 	left, right, res := 0, len(input)-1, 0
 	maxLeft, maxRight := input[left], input[right]
 	for left < right {
