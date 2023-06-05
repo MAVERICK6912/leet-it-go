@@ -3,7 +3,7 @@ package stack
 import "strconv"
 
 func evalRPN(tokens []string) int {
-	stack := New[int]()
+	stack := NewStack[int]()
 	for _, token := range tokens {
 		switch token {
 		case "+":

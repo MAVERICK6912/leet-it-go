@@ -1,7 +1,7 @@
 package stack
 
 func isValid(s string) bool {
-	stack := New[rune]()
+	stack := NewStack[rune]()
 	for _, char := range s {
 		if char == '{' || char == '[' || char == '(' {
 			stack.Push(char)

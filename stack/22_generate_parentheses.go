@@ -3,7 +3,7 @@ package stack
 import "strings"
 
 func generateParenthesis(n int) []string {
-	stack := New[string]()
+	stack := NewStack[string]()
 	res := make([]string, 0)
 	backTrackParantheses(0, 0, n, &res, stack)
 	return res

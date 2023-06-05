@@ -2,7 +2,7 @@ package stack
 
 type stack[T any] []T
 
-func New[T any]() stack[T] {
+func NewStack[T any]() stack[T] {
 	return make(stack[T], 0)
 }
 
@@ -26,6 +26,14 @@ func (s *stack[T]) Peek() T {
 	var res T
 	if len(*s) > 0 {
 		return (*s)[len(*s)-1]
+	}
+	return res
+}
+
+func (s *stack[T]) Get(pos int) T {
+	var res T
+	if s.Length() > 0 && pos <= s.Length() {
+		return (*s)[len(*s)-pos]
 	}
 	return res
 }

@@ -6,7 +6,7 @@ type temperature struct {
 }
 
 func dailyTemperatures(temperatures []int) []int {
-	stack := New[temperature]()
+	stack := NewStack[temperature]()
 	res := populateDefaultVal(0, make([]int, len(temperatures)))
 	for index, temp := range temperatures {
 		for stack.Length() > 0 && temp > stack.Peek().temp {
