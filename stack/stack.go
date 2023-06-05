@@ -29,3 +29,15 @@ func (s *stack[T]) Peek() T {
 	}
 	return res
 }
+
+func (s *stack[T]) GetAll() []T {
+	res := make([]T, 0)
+	for _, v := range *s {
+		res = append(res, v)
+	}
+	return res
+}
+
+func (s stack[T]) Length() int {
+	return len(s)
+}
